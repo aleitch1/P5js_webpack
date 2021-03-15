@@ -1,7 +1,7 @@
-import { goldenRatioTallRectangle, getRandomIntInclusive } from '../library/utils';
+import { goldenRatioTallRectangle, getRandomIntInclusive, goldenRatioByWidth } from '../library/utils';
 
 function genGoldenRectangleWindow(w, x = 10, y = 10) {
-  const bits = goldenRatio(w);
+  const bits = goldenRatioByWidth(w);
   const innerPaneScale = 0.95;
   const paneDiff = (1 - innerPaneScale) / 2;
 

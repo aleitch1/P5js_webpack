@@ -41,7 +41,7 @@ function drawFireEscapeLayer(settings) {
   const supportRange = range(numberOfSupports);
   supportRange.forEach((support, i) => {
     const widthSplit = w / numberOfSupports;
-    const stringerX = (fireEscapeX + (widthSplit/2)) + (widthSplit * i);
+    const stringerX = (fireEscapeX + (widthSplit / 2)) + (widthSplit * i);
     p5Sketch.line(stringerX, levelBottom, stringerX, levelBottom - height / 3);
     if (isItCurvy) {
       if (i === 1) {
@@ -76,7 +76,7 @@ function drawFireEscapeLayer(settings) {
     p5Sketch.rect(ladderX, ladderY, 2, 45);
     p5Sketch.rect(ladderX + 8, ladderY, 2, 45);
     for (let z = 0; x < 7; z += 1) {
-      p5Sketch.rect(ladderX, ladderY + (5 * i) + 5, 12, 0.5);
+      p5Sketch.rect(ladderX, ladderY + (5 * z) + 5, 12, 0.5);
     }
 
     /* Rungs */

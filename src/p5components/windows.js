@@ -140,7 +140,7 @@ function genFramedPanelVal(w, x, y, h) {
   };
 }
 
-const windowDrawFnList = [drawSquarePaneWindow, drawTwoPaneWindow, drawOnePaneWindow];
+const windowDrawFnList = [drawSquarePaneWindow, drawTwoPaneWindow];
 
 export {
   drawPanelPane,
