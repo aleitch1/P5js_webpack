@@ -18,7 +18,7 @@ logger('Loaded bundle.js');
 const DEBUG = false;
 const y = 100; // animated line
 
-const canvas = [3200, 940];
+const canvas = [1280, 940];
 const pageMargin = 10; // center the building
 
 const buildingConfig = {
@@ -63,18 +63,17 @@ const s = (p5Sketch) => {
     const storyArray = storyGenerator(genBuilding);
 
     storyArray.forEach((story, i) => {
-      console.log('story config object', story);
-      // debugger;
-      fireEscapeGen({ ...story, p5Sketch });
-      /*
-        Here we pass the sketch object on every config
-        This is annoying and might be better handled with a state manager
-       */
       drawBasicBuildingLayer({
         p5Sketch,
         ...story,
         currentStory: i
       });
+      // debugger;
+      fireEscapeGen({ ...story, index: i, p5Sketch });
+      /*
+        Here we pass the sketch object on every config
+        This is annoying and might be better handled with a state manager
+       */
     });
   };
 };
