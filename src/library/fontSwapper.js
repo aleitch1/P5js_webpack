@@ -44,10 +44,7 @@ async function loadFontsList() {
   try {
     const result = await fetch(`https://www.googleapis.com/webfonts/v1/webfonts?key=${API_KEY}`);
     const data = await result.json();
-    console.log('loaded google fonts list: ', data.items.length);
-    console.log('loaded google fonts list: ', data.items[2]);
     const popular = data.items.filter((f) => popular2020.includes(f.family));
-    console.log('popular', popular);
     return popular;
   } catch (error) {
     console.log('loadFontsList', error, error.message);
@@ -63,7 +60,6 @@ function loadRandomFont(fontsList) {
       families: [selectedFont]
     }
   });
-  console.log('Selected', selectedFont);
   return selectedFont;
 }
 
