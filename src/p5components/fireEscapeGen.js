@@ -12,6 +12,7 @@ function fireEscapeGen(config) {
     buildingWidth,
     height,
     lineY,
+    index,
     p5Sketch
   } = config;
 
@@ -23,17 +24,16 @@ function fireEscapeGen(config) {
     y: lineY,
     isItCurvy: curvy,
     isItMirrored: mirrored,
+    index,
     p5Sketch
   };
   // And here we start actually drawing the building.
   // we need: all the information about the building
-  // and an array generated from that which represents each story of the building.
-  console.log('fire escape settings', fireEscapeVal);
+  // and an array generated from that which represents each story of the building.c
   if (fireEscapes === 1) {
     drawFireEscapeLayer(fireEscapeVal);
   }
 
-  console.log(buildingOrigin);
   if (fireEscapes === 2) {
     const escapeDoubleA = { ...fireEscapeVal, x: buildingOrigin[0] + 10 };
     const escapeDoubleB = { ...fireEscapeVal, x: buildingOrigin[0] + (buildingWidth - fireEscapeVal.w) };
