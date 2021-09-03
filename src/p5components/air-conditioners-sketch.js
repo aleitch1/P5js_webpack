@@ -33,7 +33,6 @@ function draw() {
 }
 
 function basicStory(o = buildingOrigin, size = storyBlock) {
-  // console.log('add a story', o, size);
 
   const baseBlock = rect(...o, ...size);
 
