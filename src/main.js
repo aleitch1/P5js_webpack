@@ -1,9 +1,6 @@
 /* eslint-disable no-param-reassign */
 import * as P5 from './vendor/p5.min';
 
-// Fontswapper
-import { fontSwapper } from './library/fontSwapper';
-
 // P5 Dependencies
 import buildingGenerator from './p5components/buildingGenerator';
 import storyGenerator from './p5components/storyGenerator';
@@ -79,5 +76,3 @@ const s = (p5Sketch) => {
 };
 
 const p5 = new P5(s);
-
-fontSwapper();
