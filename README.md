@@ -3,6 +3,9 @@
 This emerged out of a procedural generation project about towers and fire escapes, built for ITPCamp 2019.
 
 It was developed to provide a React-like build environment for P5.js canvas drawing projects, allowing for a little better debug and tweaking. It assumes use of `import` statements and code separation and an interest in functional programming. 
+
+When you boot the code, you will get a new tenement apartment with slightly different fire escapes every 1000ms or so. 
+
 ## Getting Started
 
 ### Boot Up
