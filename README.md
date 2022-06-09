@@ -1,13 +1,25 @@
-# Getting Started
+# P5Js Webpack Boilerplate
 
-This package is written to provide a similar mental development environment to a React application, with use of `import` statements and code separation in a semi-functional programming mode. It's a mess!
+This emerged out of a procedural generation project about towers and fire escapes, built for ITPCamp 2019.
+
+It was developed to provide a React-like build environment for P5.js canvas drawing projects, allowing for a little better debug and tweaking. It assumes use of `import` statements and code separation and an interest in functional programming. 
+## Getting Started
 
 ### Boot Up
 * `npm install`
 * `npm audit fix --force`
+* `npm start`
 
+This will start a webpack development server on port 8080, and run whatever sample code you have in the server in a new browser window. 
 
-#### Common Problems
+The development server has hot reloading, but it is slow.
+
+### Production Build
+* npm run build
+
+This will output a ./dist folder containing your webpack bundle and whatever edits you've made to the index.html file you target in your scripts.
+
+### Common Problems
 
 1. Webpack won't turn on dev server
     * Have you checked that `static` is not currently `contentBase` in webpack.config.js
