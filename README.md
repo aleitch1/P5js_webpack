@@ -29,3 +29,9 @@ This will output a ./dist folder containing your webpack bundle and whatever edi
 
 1. Webpack won't turn on dev server
     * Have you checked that `static` is not currently `contentBase` in webpack.config.js
+
+2. 'node_modules' is not recognized as an internal or external command
+    * Windows problem!
+    * Windows wants JUST the webpack command, Mac wants the location of the local webpack build
+    * "start": "node_modules/.bin/webpack serve --open", -> Mac
+    * "start": "webpack serve --open", -> PC
