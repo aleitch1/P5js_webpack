@@ -13,7 +13,7 @@
 
 import {
   getBool, getRandomIntInclusive, range, goldenRatioTallRectangle
-} from '../library/utils';
+} from '../utils/utils';
 import { windowDrawFnList } from './windows'; // TODO: insane, fix this
 
 function buildingGenerator(config) {

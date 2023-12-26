@@ -1,4 +1,4 @@
-import { getRandomIntInclusive } from '../library/utils';
+import { getRandomIntInclusive } from '../utils/utils';
 
 function storyGenerator(buildingNumbers, sk) {
   const {
