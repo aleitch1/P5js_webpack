@@ -65,7 +65,7 @@ function drawFireEscapeLayer(settings) {
   /* END PLATFORM */
 
   // Ladder
-  const ladderX = (getRandomIntInclusive(0, 1) == 0) ? platX : platX + platW - 12;
+  const ladderX = (getRandomIntInclusive(0, 1) === 0) ? platX : platX + platW - 12;
   const ladderY = levelBottom - 15;
   const ladderExtend = getRandomIntInclusive(-65, 30);
 

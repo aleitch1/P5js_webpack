@@ -1,7 +1,20 @@
+/*
+  Building Generator sets up the size, shape, and number of stories
+  of the building we want to put fire escapes on to
+
+  I am not actually sure the building itself is important
+  Maybe I just want to generate the windows?
+
+  This is also really tricky to work with and would benefit perhaps
+  from a node-based approach - like, set controls on a config key visibly
+
+  This would be a good project for writing a generator engine?
+*/
+
 import {
   getBool, getRandomIntInclusive, range, goldenRatioTallRectangle
 } from '../library/utils';
-import { windowDrawFnList } from './windows';
+import { windowDrawFnList } from './windows'; // TODO: insane, fix this
 
 function buildingGenerator(config) {
   const {
@@ -27,9 +40,9 @@ function buildingGenerator(config) {
   const fireW = getRandomIntInclusive(buildingWidth / pi, buildingWidth / (pi / 2));
   const fireX = getRandomIntInclusive(buildingX, buildingX + (buildingWidth - fireW));
 
-  const fireEscapes = 1; //getRandomIntInclusive(0, 2);
+  const fireEscapes = 1; // getRandomIntInclusive(0, 2);
   const mirrored = true; // getBool();
-  const curvy = false;
+  const curvy = true;
 
   // we are going to mutate this because why not be a bad cat.
   const totalAirConditioners = range(stories.reduce((level) => level + getRandomIntInclusive(0, 3), '0'));
