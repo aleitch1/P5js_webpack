@@ -1,12 +1,15 @@
-const windowDrawFnList = [drawSquarePaneWindow, drawTwoPaneWindow];
+import drawPanelPane from './drawPanelPane';
+import drawSinglePane from './drawSinglePane';
+import drawSquarePane from './drawSquarePane';
+import drawTwoPane from './drawTwoPane';
+import genFramedPanelXYWH from './genFramedPanelXYWH';
+import genGoldenRectangle from './genGoldenRectangle';
 
-export {
-  drawPanelPane,
-  windowDrawFnList
-  // twoPane,
-  // drawSquarePaneWindow,
-  // drawTwoPaneWindow,
-  // drawOnePaneWindow,
-  // genFramedPanelXYWH,
-  // genGoldenRectangleWindow
+export default {
+  'drawPanelPane': drawPanelPane,
+  'drawSinglePane': drawSinglePane,
+  'drawSquarePane': drawSquarePane,
+  'drawTwoPane': drawTwoPane,
+  'genFramedPanelXYWH': genFramedPanelXYWH,
+  'genGoldenRectangle': genGoldenRectangle
 };
