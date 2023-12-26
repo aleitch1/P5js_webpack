@@ -1,13 +1,20 @@
-import { genGoldenRectangleWindow } from '../generators';
+import genFramedPanelXYWH from './genFramedPanelXYWH';
 import { drawAirConditioner } from '../drawAirConditioner';
 
-function drawTwoPaneWindow(config) {
+function drawSquarePaneWindow(config) {
   const {
-    p5Sketch, w, x = 10, y = 10, ac: airConditioners
+    p5Sketch,
+    storyHeight,
+    w,
+    x = 10,
+    y = 10,
+    ac: airConditioners
   } = config;
-  const numbers = genGoldenRectangleWindow(w, x, y);
-  const { outer, inner } = numbers;
 
+  const width = w * 2 >= storyHeight - 10 ? 48 : w;
+  const numbers = genFramedPanelXYWH(width, x, y, width * 2);
+
+  const { outer, inner } = numbers;
   p5Sketch.rect(outer.x, outer.y, outer.w, outer.h); // outer
   p5Sketch.rect(inner.x, inner.y, inner.w, inner.h); // outer
   p5Sketch.rect(inner.x, inner.y + inner.h / 2, inner.w, 2);
@@ -22,4 +29,4 @@ function drawTwoPaneWindow(config) {
   }
 }
 
-export default drawTwoPaneWindow;
+export default drawSquarePaneWindow;

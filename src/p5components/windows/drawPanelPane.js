@@ -1,6 +1,6 @@
 import { matrix } from '../../library/utils';
 
-import { genGoldenRectangleWindow } from '../generators';
+import genGoldenRectangleWindow from './genGoldenRectangle';
 import { drawAirConditioner } from '../drawAirConditioner';
 
 function drawPanelPane(config) {
@@ -10,6 +10,7 @@ function drawPanelPane(config) {
   const pane = matrix(cols, rows);
 
   p5Sketch.noFill();
+
   // frame
   const frame = genGoldenRectangleWindow(w, x, y);
   const {
@@ -49,14 +50,6 @@ function drawPanelPane(config) {
       windowHeight: h2
     });
   }
-
-  // return information about pane?
-  return {
-    topL: [pane[0][0].outer.x, pane[0][0].outer.y],
-    bottomR: [pane[2][2].outer.x, pane[2][2].outer.y],
-    h: h1,
-    w: w1
-  };
 }
 
 export default drawPanelPane;

@@ -1,23 +1,15 @@
+import genGoldenRectangleWindow from './genGoldenRectangle';
 import { drawAirConditioner } from '../drawAirConditioner';
 
-function drawSquarePaneWindow(config) {
+function drawOnePaneWindow(config) {
   const {
-    p5Sketch,
-    storyHeight,
-    w,
-    x = 10,
-    y = 10,
-    ac: airConditioners
+    p5Sketch, w, x = 10, y = 10, ac: airConditioners
   } = config;
-
-  const width = w * 2 >= storyHeight - 10 ? 48 : w;
-  const numbers = framedPanelXYWH(width, x, y, width * 2);
-
+  const numbers = genGoldenRectangleWindow(w, x, y);
   const { outer, inner } = numbers;
+
   p5Sketch.rect(outer.x, outer.y, outer.w, outer.h); // outer
   p5Sketch.rect(inner.x, inner.y, inner.w, inner.h); // outer
-  p5Sketch.rect(inner.x, inner.y + inner.h / 2, inner.w, 2);
-
   if (airConditioners) {
     drawAirConditioner({
       ...config,
@@ -28,4 +20,4 @@ function drawSquarePaneWindow(config) {
   }
 }
 
-export default drawSquarePaneWindow;
+export default drawOnePaneWindow;
