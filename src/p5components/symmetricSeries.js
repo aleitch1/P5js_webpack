@@ -1,7 +1,6 @@
 import { drawAirConditioner } from './drawAirConditioner';
-import {
-  getRandomIntInclusive, isEven, getBool, range
-} from '../utils/utils';
+import isEven from '../utils/isEven';
+import getBool from '../utils/getBool';
 
 /*
     numberOfWindows: numberOfWindows,
@@ -9,6 +8,7 @@ import {
     buildingOrigin: buildingX,
     buildingWidth: buildingWidth
 */
+
 function getPairSets(numberOfWindows) {
   return (!isEven(numberOfWindows))
     ? (numberOfWindows - 1) / 2
