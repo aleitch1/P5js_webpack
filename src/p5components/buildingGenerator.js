@@ -11,14 +11,22 @@
   This would be a good project for writing a generator engine?
 */
 
-import {
-  getBool, getRandomIntInclusive, range, goldenRatioTallRectangle
-} from '../utils/utils';
+import getRandomIntInclusive from '../utils/getRandomIntInclusive';
+import range from '../utils/range';
+import goldenRatioTallRectangle from '../utils/goldenRatioTallRectangle';
 import { windowDrawFnList } from './windows'; // TODO: insane, fix this
 
 function buildingGenerator(config) {
   const {
-    pageMargin, buildingWidth, minStories, maxStories, pi, canvas, buildingIndex, lowerBoundWindowWidth, upperBoundWindowWidth
+    pageMargin,
+    buildingWidth,
+    minStories,
+    maxStories,
+    pi,
+    canvas,
+    buildingIndex,
+    lowerBoundWindowWidth,
+    upperBoundWindowWidth
   } = config;
 
   const windowStyle = windowDrawFnList[1]; // debug: drawSquarePaneWindow
@@ -29,11 +37,12 @@ function buildingGenerator(config) {
   const stories = range(getRandomIntInclusive(minStories, maxStories));
   const storyHeight = Math.round(canvas[1] / stories.length);
 
-  const windowProportions = goldenRatioTallRectangle(storyHeight - getRandomIntInclusive(lowerBoundWindowWidth, upperBoundWindowWidth)); // TODO: why are these random? they aren't random in person? Are they??
-  const windowWidth = windowProportions.width;
+  // TODO: why are these random? they aren't random in person? Are they??
+  const windowProp = goldenRatioTallRectangle(storyHeight - getRandomIntInclusive(lowerBoundWindowWidth, upperBoundWindowWidth));
+  const windowWidth = windowProp.width;
   const acWidth = (lowerBoundWindowWidth + 6) * 0.618;
 
-  // this is like this because canvas draws rectangles on a strict x-y graph from origin, ie: height is sometimes backwards.
+  // Canvas draws rectangles on a strict x-y graph from origin, ie: height is sometimes backwards.
   const buildingX = pageMargin + ((pageMargin + buildingWidth) * buildingIndex);
   const buildingY = canvas[1] - Math.round((storyHeight - 20));
 
