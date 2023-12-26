@@ -7,6 +7,6 @@ export {
   // drawSquarePaneWindow,
   // drawTwoPaneWindow,
   // drawOnePaneWindow,
-  // genFramedPanelVal,
+  // framedPanelXYWH,
   // genGoldenRectangleWindow
 };

@@ -11,7 +11,7 @@ function drawSquarePaneWindow(config) {
   } = config;
 
   const width = w * 2 >= storyHeight - 10 ? 48 : w;
-  const numbers = genFramedPanelVal(width, x, y, width * 2);
+  const numbers = framedPanelXYWH(width, x, y, width * 2);
 
   const { outer, inner } = numbers;
   p5Sketch.rect(outer.x, outer.y, outer.w, outer.h); // outer

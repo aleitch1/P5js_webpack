@@ -1,4 +1,4 @@
-function genFramedPanelVal(w, x, y, h) {
+function framedPanelXYWH(w, x, y, h) {
   const innerPaneScale = 0.98;
   const paneDiff = (1 - innerPaneScale) / 2;
 
@@ -21,4 +21,4 @@ function genFramedPanelVal(w, x, y, h) {
   };
 }
 
-export default genFramedPanelVal;
+export default framedPanelXYWH;
