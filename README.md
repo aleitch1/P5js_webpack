@@ -29,3 +29,14 @@ This will output a ./dist folder containing your webpack bundle and whatever edi
 
 1. Webpack won't turn on dev server
     * Have you checked that `static` is not currently `contentBase` in webpack.config.js
+
+2. OpenSSL problems with boot offline
+    * npm start now has a script to handle this, it's bad!
+
+
+## TODO
+* node-ify project?
+* break out the P5 portions from the webpack portions and document them then publish
+* work out how and if P5 is actually better than learning to use CSS properly
+
+
