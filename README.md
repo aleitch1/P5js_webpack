@@ -40,3 +40,10 @@ This will output a ./dist folder containing your webpack bundle and whatever edi
 * work out how and if P5 is actually better than learning to use CSS properly
 
 
+### Reasoning About Code Structure
+
+* Canvas is a side-effect of generating a state machine per turn
+* Each draw* call is a fired side-effect, but the state machine should update independently
+
+* If we can separate out the state machine of something "being" a fire escape from a draw call
+* We can then reproduce this code in Lua or elsewhere as an ongoing code demonstration
