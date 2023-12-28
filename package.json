@@ -4,7 +4,6 @@
   "description": "An art toy to generate New York pre-war housing",
   "main": "main.js",
   "private": true,
-  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "NODE_OPTIONS=--openssl_legacy_provider node_modules/.bin/webpack serve --open",
