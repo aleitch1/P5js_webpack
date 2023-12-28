@@ -2,9 +2,9 @@
 import * as P5 from './vendor/p5.min';
 
 // P5 Dependencies
-import buildingGenerator from './p5components/buildingGenerator';
-import storyGenerator from './p5components/storyGenerator';
-import { fireEscapeGen } from './p5components/fireEscapeGen';
+import buildingGenerator from './p5components/genBuildingInfo';
+import storyGenerator from './p5components/genBuildingLevel';
+import { fireEscapeGen } from './p5components/genFireEscape';
 import { drawBasicBuildingLayer } from './p5components/drawBasicBuildingLayer';
 
 function logger(str) {
