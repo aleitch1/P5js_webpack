@@ -2,10 +2,10 @@
 import * as P5 from './vendor/p5.min';
 
 // P5 Dependencies
-import buildingGenerator from './p5components/genBuildingInfo';
-import storyGenerator from './p5components/genBuildingLevel';
-import { fireEscapeGen } from './p5components/genFireEscape';
-import { drawBasicBuildingLayer } from './p5components/drawBasicBuildingLayer';
+import genBuildingInfo from './p5components/genBuildingInfo';
+import genBuildingLevel from './p5components/genBuildingLevel';
+import fireEscapeGen from './p5components/genFireEscape';
+import drawBasicBuildingLayer from './p5components/drawBasicBuildingLayer';
 
 function logger(str) {
   console.log(str);
@@ -56,8 +56,8 @@ const s = (p5Sketch) => {
 
     // you can only _draw_ things inside this, but we can do number generation pre-this.
     // We need to pass in the instantiated SK context.
-    const genBuilding = buildingGenerator(buildingConfig);
-    const storyArray = storyGenerator(genBuilding);
+    const genBuilding = genBuildingInfo(buildingConfig);
+    const storyArray = genBuildingLevel(genBuilding);
 
     storyArray.forEach((story, i) => {
       drawBasicBuildingLayer({
