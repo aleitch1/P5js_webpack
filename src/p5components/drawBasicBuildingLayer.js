@@ -2,7 +2,7 @@ import { symmetricWindowSeries } from './symmetricSeries';
 
 const DEBUG = false;
 
-function drawBasicBuildingLayer(config) {
+export default function drawBasicBuildingLayer(config) {
   const {
     p5Sketch, buildingOrigin, buildingWidth, storyY, groundFloor, height
   } = config;
@@ -54,5 +54,3 @@ function drawBasicBuildingLayer(config) {
     p5Sketch.stroke(0, 0, 0);
   }
 }
-
-export { drawBasicBuildingLayer };

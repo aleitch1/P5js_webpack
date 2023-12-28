@@ -1,7 +1,6 @@
 import drawFireEscapeLayer from './drawFireEscapeLayer';
-import drawBasicBuildingLayer from './drawBasicBuildingLayer';
 
-function fireEscapeGen(config) {
+export default function fireEscapeGen(config) {
   const {
     fireW,
     fireX,
@@ -41,5 +40,3 @@ function fireEscapeGen(config) {
     drawFireEscapeLayer(escapeDoubleB);
   }
 }
-
-export { fireEscapeGen };
