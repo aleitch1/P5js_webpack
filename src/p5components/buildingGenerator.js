@@ -14,7 +14,7 @@
 import getRandomIntInclusive from '../utils/getRandomIntInclusive';
 import range from '../utils/range';
 import goldenRatioTallRectangle from '../utils/goldenRatioTallRectangle';
-import { windowDrawFnList } from './windows'; // TODO: insane, fix this
+import windowOpts from './windows/index';
 
 function buildingGenerator(config) {
   const {
@@ -29,7 +29,7 @@ function buildingGenerator(config) {
     upperBoundWindowWidth
   } = config;
 
-  const windowStyle = windowDrawFnList[1]; // debug: drawSquarePaneWindow
+  const windowStyle = windowOpts.drawSquarePane;
 
   /* TODO: fix golden ratio window generator/it can't have AC */
   // TODO: MORE WINDOW STYLES

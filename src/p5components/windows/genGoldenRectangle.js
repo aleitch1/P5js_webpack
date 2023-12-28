@@ -1,4 +1,4 @@
-import { goldenRatioByWidth } from '../../utils/utils';
+import goldenRatioByWidth from '../../utils/goldenRatioByWidth';
 
 function genGoldenRectangle(w, x = 10, y = 10) {
   const goldenRectangle = goldenRatioByWidth(w);

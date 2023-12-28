@@ -1,4 +1,4 @@
-import { getBool } from '../utils/utils';
+import getBool from '../utils/getBool';
 
 function drawAirConditioner(config) {
   const {

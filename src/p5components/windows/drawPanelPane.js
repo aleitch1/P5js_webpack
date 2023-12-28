@@ -1,4 +1,4 @@
-import { matrix } from '../../utils/utils';
+import matrix from '../../utils/matrix';
 
 import genGoldenRectangleWindow from './genGoldenRectangle';
 import { drawAirConditioner } from '../drawAirConditioner';
