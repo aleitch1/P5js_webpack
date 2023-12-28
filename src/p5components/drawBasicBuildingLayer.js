@@ -8,12 +8,14 @@ function drawBasicBuildingLayer(config) {
   } = config;
 
   const buildingX = buildingOrigin[0];
+  const storyVisible = false; // let's make drawing the box for the data optional
 
   // Draw a box for a story
-  p5Sketch.stroke(0, 0, 0);
-  p5Sketch.noFill();
-  p5Sketch.rect(buildingX, storyY, buildingWidth, height);
-
+  if (storyVisible) {
+    p5Sketch.stroke(0, 0, 0);
+    p5Sketch.noFill();
+    p5Sketch.rect(buildingX, storyY, buildingWidth, height);
+  }
   /*
     What should happen:
     ==> Generate a building with a window style and a blank ground floor

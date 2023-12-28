@@ -1,6 +1,6 @@
 import getRandomIntInclusive from '../utils/getRandomIntInclusive';
 
-function storyGenerator(buildingNumbers, sk) {
+function storyGenerator(buildingNumbers) {
   const {
     windowStyle,
     stories,

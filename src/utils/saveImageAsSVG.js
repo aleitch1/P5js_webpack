@@ -1,8 +1,7 @@
-// TODO: rename this something other than "tower"
 // TODO: Add a GUID or other random number generator to this to make it unique
 // maybe a hash of the building state at the time it was written, for rehydration elsewhere
 
-function saveSVGAs() {
+export default function saveSVGAs() {
   console.log('SaveAs');
   const exportString = document.getElementsByTagName('svg')[0];
   const s = new XMLSerializer();
