@@ -22,6 +22,17 @@ const pageMargin = 10; // center the building
 const buildingWidth = canvas[1] / 2.75;
 
 // this assumes a non-responsive display!
+
+// TODO: how tall are buildings?
+// Right now they are always the max height of the screen
+// instead, each floor should have a requisite height
+// of ~10-14 "feet" - 9ft interior space min
+// So we should determine how many of those fit
+// then put those in rather than dividing them out
+// and never draw on the bottom "floor"
+// the screen also maybe should be 800px high to start
+// No - 650, fits on an iPhone.
+
 const buildingConfig = {
   canvas,
   pageMargin,
