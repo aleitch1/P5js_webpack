@@ -15,18 +15,22 @@ logger('Loaded bundle.js');
 const DEBUG = false;
 const y = 100; // animated line
 
+// this was a cute idea but realistically these need actual measurements
 const canvas = [1280, 940];
 const pageMargin = 10; // center the building
 
+const buildingWidth = canvas[1] / 2.75;
+
+// this assumes a non-responsive display!
 const buildingConfig = {
   canvas,
   pageMargin,
   minStories: 6,
   maxStories: 8,
   pi: 3.14159,
-  buildingWidth: 470,
-  lowerBoundWindowWidth: 48,
-  upperBoundWindowWidth: 64,
+  buildingWidth: buildingWidth,
+  lowerBoundWindowWidth: buildingWidth / 8.5,
+  upperBoundWindowWidth: buildingWidth / 7.5,
   numberOfBuildings: 1,
   buildingIndex: 0
 };
