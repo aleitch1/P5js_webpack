@@ -6,16 +6,15 @@ function drawAirConditioner(config) {
   } = config;
 
   console.log('okay give me an air conditioner');
-  console.log('config in ac', x, y, windowHeight);
-  console.log('config in ac', acWidth);
-  console.log('config in ac', p5Sketch);
+  console.log('ac config - x, y, windowHeight', x, y, windowHeight);
+  console.log('ac - ac width', acWidth);
+  console.log('ac - P5sketch present', p5Sketch);
   // air conditioners should draw themselves around a midpoint
   // air conditioners need a height not a width.
   // basically a window's height, width, and panelling
   // plus whether it has an ac or not
   // needs to be internal to that window.
 
-  // const w = acWidth;
   const xCorrect = x - acWidth / 2;
   const boxHeight = acWidth * 0.618; // clever, constrained by window width?
   const yCorrect = getBool() ? windowHeight + y - boxHeight : y;
