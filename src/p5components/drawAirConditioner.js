@@ -1,4 +1,5 @@
 import getBool from '../utils/getBool';
+import getRandomIntInclusive from '../utils/getRandomIntInclusive';
 
 function drawAirConditioner(config) {
   const {
@@ -34,13 +35,30 @@ function drawAirConditioner(config) {
   p5Sketch.rect(xCorrect + 3, yCorrect + 3, acWidth - 6, (boxHeight) - 6);
   p5Sketch.fill(255, 255, 255);
 
+  // draw label on approximately 1/3 of AC
+  // a/c labels are usually a dot then a rectangle
+  const doLabel = getRandomIntInclusive(1, 3);
+  if (doLabel === 3) {
+    const labelCoords = {
+      topX: xCorrect + (acWidth / 4),
+      topY: yCorrect + (boxHeight / 2) + 1,
+      dia: 3,
+      width: acWidth / 2,
+      lineX: xCorrect + (acWidth - 6)
+    };
+
+    p5Sketch.circle(labelCoords.topX, labelCoords.topY, labelCoords.dia);
+    p5Sketch.stroke(255, 255, 255);
+    // p5Sketch.rect(labelCoords.topX, labelCoords.topY, labelCoords.width, 1);
+    p5Sketch.line(labelCoords.topX, labelCoords.topY, labelCoords.lineX, labelCoords.topY);
+    p5Sketch.stroke(0, 0, 0);
+  }
   // inner a/c, replace with 1 rect full of dots?
   // p5Sketch.rect(xCorrect + 3, yCorrect + 5, w - 6, (boxHeight) - 10);
   // p5Sketch.rect(xCorrect + 3, yCorrect + 7, w - 6, (boxHeight) - 14);
   // p5Sketch.rect(xCorrect + 3, yCorrect + 9, w - 6, (boxHeight) - 18);
 
   // little weird dip in a-c line, which should just be white
-  p5Sketch.stroke(255, 255, 255);
 
   const indent = {
     // vertPosition: yCorrect + (boxHeight) - 2,
@@ -50,7 +68,7 @@ function drawAirConditioner(config) {
     height: 3 // this is a position?
     // height: (boxHeight) - 24 // this is a position?
   };
-
+  p5Sketch.stroke(255, 255, 255);
   p5Sketch.rect(indent.horzPosition, indent.vertPosition, indent.width, indent.height);
   p5Sketch.stroke(0, 0, 0);
   p5Sketch.noFill();
