@@ -1,4 +1,7 @@
-import goldenRatioByWidth from '../../utils/goldenRatioByWidth';
+import goldenRatioByWidth from './goldenRatioByWidth';
+
+// TODO: this is always too high!
+// The window can be no taller than 1/3 the _height_ of a Story!
 
 function genGoldenRectangle(w, x = 10, y = 10) {
   const goldenRectangle = goldenRatioByWidth(w);

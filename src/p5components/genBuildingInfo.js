@@ -23,28 +23,32 @@ function buildingGenerator(config) {
     minStories,
     maxStories,
     pi,
-    canvas,
+    canvasW,
+    canvasH,
     buildingIndex,
     lowerBoundWindowWidth,
     upperBoundWindowWidth
   } = config;
 
+  // const windowStyle = windowOpts.drawSquarePane;
   const windowStyle = windowOpts.drawSquarePane;
 
   /* TODO: fix golden ratio window generator/it can't have AC */
   // TODO: MORE WINDOW STYLES
   // const windowStyle = windowDrawFnList[getRandomIntInclusive(0, windowDrawFnList.length - 1)]; // debug: drawSquarePaneWindow
   const stories = range(getRandomIntInclusive(minStories, maxStories));
-  const storyHeight = Math.round(canvas[1] / stories.length);
+  const storyHeight = Math.round(canvasH / stories.length);
 
   // TODO: why are these random? they aren't random in person? Are they??
-  const windowProp = goldenRatioTallRectangle(storyHeight - getRandomIntInclusive(lowerBoundWindowWidth, upperBoundWindowWidth));
+  const windowBaseWidth = storyHeight - getRandomIntInclusive(lowerBoundWindowWidth, upperBoundWindowWidth);
+  const windowProp = goldenRatioTallRectangle(windowBaseWidth);
   const windowWidth = windowProp.width;
-  const acWidth = (lowerBoundWindowWidth + 6) * 0.618;
+
+  const acWidth = windowWidth * 0.618;
 
   // Canvas draws rectangles on a strict x-y graph from origin, ie: height is sometimes backwards.
   const buildingX = pageMargin + ((pageMargin + buildingWidth) * buildingIndex);
-  const buildingY = canvas[1] - Math.round((storyHeight - 20));
+  const buildingY = canvasH - Math.round((storyHeight - 20));
 
   const fireW = getRandomIntInclusive(buildingWidth / pi, buildingWidth / (pi / 2));
   const fireX = getRandomIntInclusive(buildingX, buildingX + (buildingWidth - fireW));

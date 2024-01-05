@@ -1,7 +1,7 @@
 import genGoldenRectangleWindow from '../../utils/genGoldenRectangle';
 import { drawAirConditioner } from '../drawAirConditioner';
 
-function drawOnePaneWindow(config) {
+function drawTwoPaneWindow(config) {
   const {
     p5Sketch, w, x = 10, y = 10, ac: airConditioners
   } = config;
@@ -9,7 +9,9 @@ function drawOnePaneWindow(config) {
   const { outer, inner } = numbers;
 
   p5Sketch.rect(outer.x, outer.y, outer.w, outer.h); // outer
-  p5Sketch.rect(inner.x, inner.y, inner.w, inner.h); // outer
+  p5Sketch.rect(inner.x, inner.y, inner.w, inner.h); // inner
+  p5Sketch.rect(inner.x, inner.y + inner.h / 2, inner.w, 2);
+
   if (airConditioners) {
     drawAirConditioner({
       ...config,
@@ -20,4 +22,4 @@ function drawOnePaneWindow(config) {
   }
 }
 
-export default drawOnePaneWindow;
+export default drawTwoPaneWindow;

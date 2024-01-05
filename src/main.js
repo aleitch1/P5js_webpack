@@ -17,9 +17,11 @@ const y = 100; // animated line
 
 // this was a cute idea but realistically these need actual measurements
 const canvas = [1280, 940];
+const canvasW = canvas[0];
+const canvasH = canvas[1];
 const pageMargin = 10; // center the building
 
-const buildingWidth = canvas[1] / 2.75;
+const buildingWidth = 460;
 
 // this assumes a non-responsive display!
 
@@ -35,13 +37,17 @@ const buildingWidth = canvas[1] / 2.75;
 
 const buildingConfig = {
   canvas,
+  canvasH,
+  canvasW,
   pageMargin,
   minStories: 6,
   maxStories: 8,
   pi: 3.14159,
-  buildingWidth: buildingWidth,
-  lowerBoundWindowWidth: buildingWidth / 8.5,
-  upperBoundWindowWidth: buildingWidth / 7.5,
+  buildingWidth,
+  // these are subtracted from the height of the story overall
+  // so inverse relation to actual height of window
+  lowerBoundWindowWidth: 64,
+  upperBoundWindowWidth: 72,
   numberOfBuildings: 1,
   buildingIndex: 0
 };
@@ -74,6 +80,8 @@ const s = (p5Sketch) => {
     const genBuilding = genBuildingInfo(buildingConfig);
     const storyArray = genBuildingLevel(genBuilding);
 
+    // Each story draws itself
+    // then calls symmetricSeries to generate the windows within the story
     storyArray.forEach((story, i) => {
       drawBasicBuildingLayer({
         p5Sketch,

@@ -1,4 +1,4 @@
-import { symmetricWindowSeries } from './symmetricSeries';
+import { symmetricWindowSeries } from './symmetricWindowSeries';
 
 const DEBUG = false;
 

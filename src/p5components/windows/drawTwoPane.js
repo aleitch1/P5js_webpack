@@ -1,4 +1,4 @@
-import genGoldenRectangleWindow from './genGoldenRectangle';
+import genGoldenRectangleWindow from '../../utils/genGoldenRectangle';
 import { drawAirConditioner } from '../drawAirConditioner';
 
 function drawTwoPaneWindow(config) {
